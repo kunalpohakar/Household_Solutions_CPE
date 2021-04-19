@@ -94,13 +94,104 @@ class _SearchState extends State<Search> {
       ),
       body: isExcecuted
           ? searchedData()
-          : Container(
-              child: Center(
-                child: Text(
-                  "Search any Services",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30.0,
+          : SingleChildScrollView(
+              child: Container(
+                child: Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          "Browes Categories",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.security_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Security",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.pest_control_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Pest Control",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.cleaning_services_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Cleaning",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.electrical_services_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Electricians",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.carpenter_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Carpenter",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.fitness_center_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Fitness Trainer",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.plumbing_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Plumbing",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.spa_outlined,
+                            color: Colors.grey.shade500),
+                        title: Text(
+                          "Salon for Women",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                      ListTile(
+                        leading:
+                            Icon(Icons.spa_sharp, color: Colors.grey.shade500),
+                        title: Text(
+                          "Salon for Men",
+                          style: TextStyle(
+                              color: Colors.grey.shade500, fontSize: 16.0),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

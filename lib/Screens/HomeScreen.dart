@@ -25,37 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
     pageController.jumpToPage(page);
   }
 
-  // @override
-  // void initState() {
-  //   _firebaseMessaging.configure(
-  //     onLaunch: (Map<String, dynamic> message) async {
-  //       setState(() {
-  //         _message = message['title'];
-  //       });
-  //       print(_message);
-  //     },
-  //     onResume: (Map<String, dynamic> message) async {
-  //       setState(() {
-  //         _message = message['title'];
-  //       });
-  //       print(_message);
-  //     },
-  //     onMessage: (Map<String, dynamic> message) async {
-  //       setState(() {
-  //         _message = message['title'];
-  //       });
-  //       print(_message);
-  //     },
-  //   );
-
-  //   _firebaseMessaging.getToken().then((String token) async
-  //     assert(token != null);
-  //     print(value);
-  //   });
-
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

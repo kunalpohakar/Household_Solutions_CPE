@@ -23,7 +23,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.search),
             onPressed: () {},
           ),
         ],
@@ -128,49 +128,30 @@ class _DetailedScreenState extends State<DetailedScreen> {
                 ),
               ),
             ),
-            Container(
-              width: 375,
-              height: 50,
-              decoration: BoxDecoration(
-                color: const Color(0xff217AF1),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Center(
-                child: Text(
-                  "Book Now",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            // Container(
+            //   width: 375,
+            //   height: 50,
+            //   decoration: BoxDecoration(
+            //     color: const Color(0xff217AF1),
+            //     borderRadius: BorderRadius.circular(10.0),
+            //   ),
+            //   child: Center(
+            //     child: Text(
+            //       "Book Now",
+            //       style: TextStyle(
+            //         color: Colors.white,
+            //         fontSize: 24.0,
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.only(top: 15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    width: 170.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Colors.grey.shade50,
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "Add To Cart",
-                          style: TextStyle(
-                            color: Colors.blueGrey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   GestureDetector(
                     onTap: () async {
                       await FirebaseFirestore.instance
@@ -187,14 +168,16 @@ class _DetailedScreenState extends State<DetailedScreen> {
                             '${Get.arguments['title']} is added to Wishlist',
                             colorText: Colors.black,
                             snackPosition: SnackPosition.TOP,
-                            backgroundColor: Colors.white);
+                            backgroundColor: Color(0xffBFD8F9));
+                            //0xffCEE3FF
                       });
                     },
                     child: Container(
                       width: 170.0,
+                      height: 50.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        color: Colors.grey.shade50,
+                        color: Color(0xffBFD8F9),
                       ),
                       child: Center(
                         child: Padding(
@@ -202,10 +185,31 @@ class _DetailedScreenState extends State<DetailedScreen> {
                           child: Text(
                             "Add To Wishlist",
                             style: TextStyle(
-                              color: Colors.blueGrey,
+                              color: Color(0xff217AF1),
                               fontWeight: FontWeight.bold,
                               fontSize: 18.0,
                             ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 170.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: const Color(0xff217AF1),
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "Book Now",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
                           ),
                         ),
                       ),

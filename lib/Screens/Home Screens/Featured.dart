@@ -24,10 +24,11 @@ class _FeaturedState extends State<Featured> {
       backgroundColor: const Color(0xff25282B),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: const Color(0xff25282B),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.search),
             onPressed: () => Navigator.pushReplacement(
                 context,
                 PageTransition(
@@ -35,6 +36,13 @@ class _FeaturedState extends State<Featured> {
                     type: PageTransitionType.leftToRightWithFade)),
           ),
         ],
+        title: Text(
+          "Home",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -42,38 +50,59 @@ class _FeaturedState extends State<Featured> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0,),
               child: Container(
-                height: 80.0,
+                height: 300.0,
                 width: 400.0,
+                child: Image(image: AssetImage('images/banner.png'),),
                 // color: Colors.cyan,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 80.0,
+                height: 60.0,
                 width: 400.0,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: const Color(0xff2075E8),
+                  borderRadius: BorderRadius.circular(7.0),
+                  color: const Color(0xff145DA0),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      "Services now on sale",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22.0,
-                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.ticketAlt,
+                          color: Color(0xffBFD8F9),
+                        ),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Text(
+                          "Services now on sale",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 21.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.ticketAlt,
+                          color: Color(0xffBFD8F9),
+                        ),
+                      ],
                     ),
                     Text(
                       "2 Day's Left!",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

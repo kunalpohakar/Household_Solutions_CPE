@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
               SizedBox(
                 height: 300,
                 child: Image.asset(
-                  "images/SS.JPG",
+                  "images/HS.png",
                 ),
               ),
               Padding(
