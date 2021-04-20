@@ -5,6 +5,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hs/Screens/HomeScreen.dart';
+import 'package:hs/Screens/Sign%20In%20Options/phone_login.dart';
 import 'package:hs/Screens/Sign%20In%20Options/signup.dart';
 import 'package:hs/Services/Authentication.dart';
 import 'package:page_transition/page_transition.dart';
@@ -68,8 +69,12 @@ class _SignInState extends State<SignIn> {
                 padding: const EdgeInsets.only(bottom: 15.0),
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(primary: Color(0xff217AF1)),
-                  onPressed: () {
-                    print("Sign In with Phone No");
+                  onPressed: () async{
+                     Navigator.pushReplacement(
+                            context,
+                            PageTransition(
+                                child: Phonelogin(),
+                                type: PageTransitionType.leftToRightWithFade));
                   },
                   icon: Icon(EvaIcons.phone),
                   label: Text("Sign In with Phone No"),
