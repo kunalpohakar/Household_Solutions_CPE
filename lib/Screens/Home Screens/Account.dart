@@ -52,7 +52,7 @@ class _AccountState extends State<Account> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: Icon(EvaIcons.shoppingCart),
+            icon: Icon(Icons.account_box),
             onPressed: () {
               print("Cart");
             },
@@ -79,6 +79,20 @@ class _AccountState extends State<Account> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 8.0,
+                    ),
+                    child: Container(
+                      height: 200.0,
+                      width: 250.0,
+                      child: Image(
+                        image: AssetImage('images/logo.png'),
+                      ),
+                      // color: Colors.cyan,
+                    ),
+                  ),
                   // Text(
                   //   finalName,
                   //   style: TextStyle(
@@ -86,28 +100,28 @@ class _AccountState extends State<Account> {
                   //     fontSize: 24.0,
                   //   ),
                   // ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          EvaIcons.google,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: 5.0,
-                        ),
-                        Text(
-                          "finalEmail",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 10.0),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Icon(
+                  //         EvaIcons.google,
+                  //         color: Colors.white,
+                  //       ),
+                  //       SizedBox(
+                  //         width: 5.0,
+                  //       ),
+                  //       Text(
+                  //         "finalEmail",
+                  //         style: TextStyle(
+                  //           color: Colors.grey,
+                  //           fontSize: 20.0,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.only(top: 45.0),
                     child: MaterialButton(

@@ -27,7 +27,7 @@ class PaymentGateway extends GetxController {
   }
 
   Void dispatchPayment(
-      int amount, String name, int contact, String email, String wallet) {
+      double amount, String name, int contact, String email, String wallet) {
     var options = {
       'key': 'rzp_test_GDuKx0MEhD5Wdy',
       'amount': amount,
