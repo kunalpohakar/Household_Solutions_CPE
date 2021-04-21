@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:hs/Services/PaymentGateway.dart';
 
 class DetailedScreen extends StatefulWidget {
   @override
@@ -151,7 +152,6 @@ class _DetailedScreenState extends State<DetailedScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  
                   GestureDetector(
                     onTap: () async {
                       await FirebaseFirestore.instance
@@ -169,7 +169,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
                             colorText: Colors.black,
                             snackPosition: SnackPosition.TOP,
                             backgroundColor: Color(0xffBFD8F9));
-                            //0xffCEE3FF
+                        //0xffCEE3FF
                       });
                     },
                     child: Container(
@@ -194,27 +194,39 @@ class _DetailedScreenState extends State<DetailedScreen> {
                       ),
                     ),
                   ),
-                  Container(
-                    width: 170.0,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: const Color(0xff217AF1),
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18.0,
+                  GetBuilder<PaymentGateway>(
+                    init: PaymentGateway(),
+                    builder: (value) {
+                      return GestureDetector(
+                        onTap: () {
+                          value.dispatchPayment(599, 'Household Solutions',
+                              1234567890, 'test_HS@gmail.com', 'Google Pay');
+                        },
+                        child: Container(
+                          width: 170.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: const Color(0xff217AF1),
+                          ),
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   ),
+                  //
                 ],
               ),
             ),

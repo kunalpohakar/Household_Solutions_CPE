@@ -37,7 +37,7 @@ class _PhoneloginState extends State<Phonelogin> {
       });
 
       if (authCredential?.user != null) {
-        Navigator.pushReplacement(
+        Navigator.push(
             context,
             PageTransition(
                 child: HomeScreen(), type: PageTransitionType.bottomToTop));
