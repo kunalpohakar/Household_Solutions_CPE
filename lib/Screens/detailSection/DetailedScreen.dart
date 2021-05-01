@@ -199,7 +199,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
                     builder: (value) {
                       return GestureDetector(
                         onTap: () {
-                          value.dispatchPayment(599, 'Household Solutions',
+                          value.dispatchPayment(599.0, 'Household Solutions',
                               1234567890, 'test_HS@gmail.com', 'Google Pay');
                         },
                         child: Container(
