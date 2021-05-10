@@ -155,7 +155,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
                   GestureDetector(
                     onTap: () async {
                       await FirebaseFirestore.instance
-                          .collection('wishlist')
+                          .collection("wishlist")
                           .add({
                         'title': Get.arguments['title'],
                         'images': Get.arguments['images'],

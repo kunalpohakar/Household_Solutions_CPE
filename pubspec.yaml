@@ -19,10 +19,11 @@ dependencies:
   firebase_messaging: ^9.1.0
   flutter_facebook_login: ^3.0.0
   flutter_secure_storage: ^4.1.0
+  flutter_svg: ^0.22.0
   font_awesome_flutter: ^9.0.0
   get: ^4.1.1
   google_sign_in: ^5.0.1
-  http: ^0.13.1
+  http: ^0.13.3
   material_floating_search_bar: ^0.3.3
   page_transition: ^1.1.7+6
   provider: ^5.0.0

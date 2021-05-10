@@ -40,7 +40,7 @@ class _WishlistState extends State<Wishlist> {
         body: GetBuilder<DataController>(
             init: DataController(),
             builder: (value) {
-              return new FutureBuilder(
+              return FutureBuilder(
                   future: value.getData("wishlist"),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
@@ -204,138 +204,6 @@ class _WishlistState extends State<Wishlist> {
                       );
                     }
                   });
-            })
-        /*SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 400.0,
-                width: 400.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      child: Icon(
-                        EvaIcons.smartphoneOutline,
-                        color: Colors.white,
-                      ),
-                      radius: 50.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
-                      child: Text(
-                        "Want to save something for later",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
-                      child: Text(
-                        "Your wishlist shall go here",
-                        style: TextStyle(
-                          color: Colors.grey.shade500,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  "Browes Categories",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              ListTile(
-                leading:
-                    Icon(Icons.security_outlined, color: Colors.grey.shade500),
-                title: Text(
-                  "Security",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.pest_control_outlined,
-                    color: Colors.grey.shade500),
-                title: Text(
-                  "Pest Control",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.cleaning_services_outlined,
-                    color: Colors.grey.shade500),
-                title: Text(
-                  "Cleaning",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.electrical_services_outlined,
-                    color: Colors.grey.shade500),
-                title: Text(
-                  "Electricians",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading:
-                    Icon(Icons.carpenter_outlined, color: Colors.grey.shade500),
-                title: Text(
-                  "Carpenter",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.fitness_center_outlined,
-                    color: Colors.grey.shade500),
-                title: Text(
-                  "Fitness Trainer",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading:
-                    Icon(Icons.plumbing_outlined, color: Colors.grey.shade500),
-                title: Text(
-                  "Plumbing",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.spa_outlined, color: Colors.grey.shade500),
-                title: Text(
-                  "Salon for Women",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.spa_sharp, color: Colors.grey.shade500),
-                title: Text(
-                  "Salon for Men",
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 16.0),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-   
-  */
-        );
+            }));
   }
 }

@@ -20,8 +20,8 @@ class Authentication {
     final UserCredential userCredential =
         await _firebaseAuth.signInWithCredential(authCredential);
     final User user = userCredential.user;
-    assert(user.displayName != user.displayName);
-    assert(user.email != user.email);
+    assert(user.displayName != null);
+    assert(user.email != null);
     final User currentUser = _firebaseAuth.currentUser;
     assert(currentUser.uid == user.uid);
 

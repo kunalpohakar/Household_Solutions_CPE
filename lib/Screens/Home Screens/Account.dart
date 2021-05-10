@@ -1,6 +1,5 @@
 // import 'dart:async';
 
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hs/Screens/landingpage.dart';
@@ -93,35 +92,6 @@ class _AccountState extends State<Account> {
                       // color: Colors.cyan,
                     ),
                   ),
-                  // Text(
-                  //   finalName,
-                  //   style: TextStyle(
-                  //     color: Colors.white,
-                  //     fontSize: 24.0,
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(top: 10.0),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       Icon(
-                  //         EvaIcons.google,
-                  //         color: Colors.white,
-                  //       ),
-                  //       SizedBox(
-                  //         width: 5.0,
-                  //       ),
-                  //       Text(
-                  //         "finalEmail",
-                  //         style: TextStyle(
-                  //           color: Colors.grey,
-                  //           fontSize: 20.0,
-                  //         ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                   Padding(
                     padding: const EdgeInsets.only(top: 45.0),
                     child: MaterialButton(
