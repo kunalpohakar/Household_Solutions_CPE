@@ -2,6 +2,7 @@
 
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:hs/Screens/landingpage.dart';
 
 import 'package:hs/Services/Authentication.dart';
@@ -96,7 +97,31 @@ class _AccountState extends State<Account> {
                     padding: const EdgeInsets.only(top: 45.0),
                     child: MaterialButton(
                       onPressed: () {
-                        print("Business");
+                        showDialog(
+                          context: context,
+                          builder: (_) => NetworkGiffyDialog(
+                            image: Image.network(
+                              'https://media.giphy.com/media/ignaF0h8CcPt5OT4DL/giphy.gif',
+                              fit: BoxFit.cover,
+                            ),
+                            title: Text(
+                              "Comming Soon...",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: const Color(0xff217AF1),
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            description: Text(
+                              'You can do Business with HS',
+                              textAlign: TextAlign.center,
+                            ),
+                            onlyCancelButton: true,
+                            buttonCancelColor: Color(0xff217AF1),
+                            entryAnimation: EntryAnimation.BOTTOM_LEFT,
+                          ),
+                        );
                       },
                       child: Text(
                         "Try HS for Business",

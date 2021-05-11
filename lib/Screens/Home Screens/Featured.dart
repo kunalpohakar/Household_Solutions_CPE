@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hs/Screens/Home%20Screens/Search.dart';
 import 'package:hs/Screens/detailSection/DetailedScreen.dart';
@@ -50,11 +51,16 @@ class _FeaturedState extends State<Featured> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0,),
+              padding: const EdgeInsets.only(
+                left: 8.0,
+                right: 8.0,
+              ),
               child: Container(
                 height: 300.0,
                 width: 400.0,
-                child: Image(image: AssetImage('images/banner.png'),),
+                child: Image(
+                  image: AssetImage('images/banner.png'),
+                ),
                 // color: Colors.cyan,
               ),
             ),
@@ -318,7 +324,7 @@ class _FeaturedState extends State<Featured> {
                 Padding(
                   padding: const EdgeInsets.all(11.0),
                   child: Container(
-                    height: 225.0,
+                    height: 250.0,
                     width: 400.0,
                     // decoration: BoxDecoration(
                     //   borderRadius: BorderRadius.circular(10.0),
@@ -366,12 +372,41 @@ class _FeaturedState extends State<Featured> {
                         SizedBox(
                           height: 40.0,
                         ),
-                        Text(
-                          "Try HS for Business",
-                          style: TextStyle(
-                            color: const Color(0xff217AF1),
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
+                        TextButton(
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (_) => NetworkGiffyDialog(
+                                image: Image.network(
+                                  'https://media.giphy.com/media/ignaF0h8CcPt5OT4DL/giphy.gif',
+                                  fit: BoxFit.cover,
+                                ),
+                                title: Text(
+                                  "Comming Soon...",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: const Color(0xff217AF1),
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                description: Text(
+                                  'You can do Business with HS',
+                                  textAlign: TextAlign.center,
+                                ),
+                                onlyCancelButton: true,
+                                buttonCancelColor: Color(0xff217AF1),
+                                entryAnimation: EntryAnimation.BOTTOM_LEFT,
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Try HS for Business",
+                            style: TextStyle(
+                              color: const Color(0xff217AF1),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
