@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:get/get.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
@@ -26,7 +24,7 @@ class PaymentGateway extends GetxController {
     Get.snackbar("Something Went's Wrong", externalWalletResponse.walletName);
   }
 
-  Void dispatchPayment(
+  dispatchPayment(
       double amount, String name, int contact, String email, String wallet) {
     var options = {
       'key': 'rzp_test_GDuKx0MEhD5Wdy',
