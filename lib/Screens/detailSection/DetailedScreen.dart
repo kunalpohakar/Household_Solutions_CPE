@@ -11,15 +11,15 @@ class DetailedScreen extends StatefulWidget {
 }
 
 class _DetailedScreenState extends State<DetailedScreen> {
-  DateTime pickedDate;
-  TimeOfDay time;
+  DateTime dateTime = DateTime.now();
+  TimeOfDay timeOfDay = TimeOfDay.now();
 
-  @override
-  void initState() {
-    super.initState();
-    pickedDate = new DateTime.now();
-    time = new TimeOfDay.now();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   pickedDate = new DateTime.now();
+  //   time = new TimeOfDay.now();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -142,29 +142,92 @@ class _DetailedScreenState extends State<DetailedScreen> {
                 ),
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  // RaisedButton(
+                  //   child: Text(
+                  //     'Select Date...',
+                  //     style: TextStyle(color: Colors.white),
+                  //   ),
+                  //   onPressed: () => showBottomSheet(
+                  //     context: context,
+                  //     builder: (context) => Container(
+                  //       child: buildDatePicker(),
+                  //     ),
+                  //   ),
+                  // ),
+
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     Text(
+                  //       _dateTime == null
+                  //           ? 'Date : ${_dateTime.year} - ${_dateTime.month} - ${_dateTime.day}'
+                  //           : _dateTime.toString(),
+                  //       style: TextStyle(color: Colors.white),
+                  //     ),
+                  //     FlatButton(
+                  //       child: Text('Pick a Date...'),
+                  //       onPressed: () {
+                  //         showDatePicker(
+                  //           context: context,
+                  //           initialDate: _dateTime,
+                  //           firstDate: DateTime(DateTime.now().year - 1),
+                  //           lastDate: DateTime(DateTime.now().year + 5),
+                  //         ).then(
+                  //           (date) {
+                  //             setState(() {
+                  //               _dateTime = date;
+                  //             });
+                  //           },
+                  //         );
+                  //       },
+                  //     ),
+                  //   ],
+                  // ),
+
+                  ListTile(
+                      title: Text(
+                        (" Date : ${dateTime.year} - ${dateTime.month} - ${dateTime.day}"),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      trailing: Icon(
+                        Icons.date_range_sharp,
+                        color: Colors.white,
+                      ),
+                      onTap: () async {
+                        DateTime date = await showDatePicker(
+                          context: context,
+                          initialDate: dateTime,
+                          firstDate: new DateTime(DateTime.now().year - 1),
+                          lastDate: new DateTime(DateTime.now().year + 5),
+                        );
+
+                        if (date != null)
+                          setState(() {
+                            dateTime = date;
+                          });
+                      }),
                   ListTile(
                     title: Text(
-                      (" Date : ${pickedDate.year} - ${pickedDate.month} - ${pickedDate.day}"),
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    trailing: Icon(
-                      Icons.date_range_sharp,
-                      color: Colors.white,
-                    ),
-                    onTap: _pickDate,
-                  ),
-                  ListTile(
-                    title: Text(
-                      " Time : ${time.hour}:${time.minute}",
+                      " Time : ${timeOfDay.hour}:${timeOfDay.minute}",
                       style: TextStyle(color: Colors.white),
                     ),
                     trailing: Icon(
                       Icons.timelapse_sharp,
                       color: Colors.white,
                     ),
-                    onTap: _pickTime,
+                    onTap: () async {
+                      TimeOfDay t = await showTimePicker(
+                        context: context,
+                        initialTime: timeOfDay,
+                      );
+
+                      if (t != null)
+                        setState(() {
+                          timeOfDay = t;
+                        });
+                    },
                   ),
                 ],
               ),
@@ -257,29 +320,41 @@ class _DetailedScreenState extends State<DetailedScreen> {
     );
   }
 
-  _pickDate() async {
-    DateTime date = await showDatePicker(
-      context: context,
-      initialDate: pickedDate,
-      firstDate: new DateTime(DateTime.now().year - 1),
-      lastDate: new DateTime(DateTime.now().year + 5),
-    );
+  // Widget buildDatePicker() => SizedBox(
+  //       height: 160.0,
+  //       child: CupertinoDatePicker(
+  //         minimumYear: DateTime.now().year,
+  //         maximumYear: 2025,
+  //         initialDateTime: dateTime,
+  //         mode: CupertinoDatePickerMode.date,
+  //         onDateTimeChanged: (dateTime) =>
+  //             setState(() => this.dateTime = dateTime),
+  //       ),
+  //     );
 
-    if (date != null)
-      setState(() {
-        pickedDate = date;
-      });
-  }
+  // _pickDate() async {
+  //   DateTime date = await showDatePicker(
+  //     context: context,
+  //     initialDate: pickedDate,
+  //     firstDate: new DateTime(DateTime.now().year - 1),
+  //     lastDate: new DateTime(DateTime.now().year + 5),
+  //   );
 
-  _pickTime() async {
-    TimeOfDay t = await showTimePicker(
-      context: context,
-      initialTime: time,
-    );
+  //   if (date != null)
+  //     setState(() {
+  //       pickedDate = date;
+  //     });
+  // }
 
-    if (t != null)
-      setState(() {
-        time = t;
-      });
-  }
+  // _pickTime() async {
+  //   TimeOfDay t = await showTimePicker(
+  //     context: context,
+  //     initialTime: time,
+  //   );
+
+  //   if (t != null)
+  //     setState(() {
+  //       time = t;
+  //     });
+  // }
 }
